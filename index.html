@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosheet</title>
+    <link rel="stylesheet" href="/css/infosheet.min.css">
+    <script src="/js/infosheet.min.js" defer></script>
+    <style>
+        ._success {
+            background-color: cadetblue;
+            --infosheet-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <button onclick="kalrt()">открыть</button>
+        </div>
+        <div class="container">
+            <button onclick="kalrt2()">открыть</button>
+        </div>
+    </main>
+    <script>
+        const kalrt = () => new Infosheet({
+            title: 'Спасибо',
+            message: 'всплывающее сообщение',
+            delay: 5000,
+        });
+        const kalrt2 = () => new Infosheet({
+            title: 'Спасибо',
+            message: 'всплывающее сообщение',
+            cssClass: 'success',
+            delay: 3000,
+        });
+    </script>
+</body>
+
+</html>

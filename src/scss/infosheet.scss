@@ -1,0 +1,37 @@
+.infosheet-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    translate: -50% -50%;
+    z-index: 1061;
+}
+
+.infosheet {
+    --infosheet-color: hsl(0 0% 0%);
+    --infosheet-bg: white;
+    --infosheet-border-radius: .5rem;
+    --infosheet-padding-x: 1rem;
+    --infosheet-padding-y: 1rem;
+    --infosheet-shadow: 1px 1px 4px hsl(0 0% 0% / .15);
+    --infosheet-transition-time: .3s;
+
+    color: var(--infosheet-color);
+    background-color: var(--infosheet-bg);
+    border-radius: var(--infosheet-border-radius);
+    padding-block: var(--infosheet-padding-y);
+    padding-inline: var(--infosheet-padding-x);
+    box-shadow: var(--infosheet-shadow);
+    opacity: 0;
+    visibility: hidden;
+    scale: .75;
+    transition: opacity var(--infosheet-transition-time),
+        visibility var(--infosheet-transition-time),
+        scale var(--infosheet-transition-time);
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        scale: 1;
+    }
+}

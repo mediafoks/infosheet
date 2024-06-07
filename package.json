@@ -1,0 +1,29 @@
+{
+    "name": "infosheet-plugin",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "del": "node .config/del",
+        "sass-compiler": "pnpm run del && sass src/scss:css",
+        "postcss-dev": "postcss css/*.css --config .config/ --env development -r",
+        "postcss-prod": "postcss css/*.css --config .config/ --env production -d css/ --ext min.css",
+        "sass": "pnpm run sass-compiler && pnpm run postcss-dev && pnpm run postcss-prod",
+        "js": "terser ./src/js/*.js --config-file .config/terser.config.json -o ./js/infosheet.min.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "^10.4.19",
+        "cssnano": "^7.0.2",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.0",
+        "postcss-combine-duplicated-selectors": "^10.0.3",
+        "postcss-sort-media-queries": "^5.2.0",
+        "sass": "^1.77.4",
+        "terser": "^5.31.1"
+    },
+    "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771"
+}
